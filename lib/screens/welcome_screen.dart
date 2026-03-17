@@ -16,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // Title small text
+              
               const Text(
                 "Welcome to",
                 style: TextStyle(
@@ -27,7 +27,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 8),
 
-              // Main title
+              
               const Text(
                 "AI Productivity Coach",
                 textAlign: TextAlign.center,
@@ -40,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // Illustration Image
+              
               Image.asset(
                 "assets/images/welcome.png",
                 height: 250,
@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              // Subtitle description
+             
               const Text(
                 "Boost your focus and productivity\nwith personalized AI coaching",
                 textAlign: TextAlign.center,
@@ -62,7 +62,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const Spacer(),
 
-              // Get Start Button
+              
               SizedBox(
                 width: double.infinity,
                 height: 55,
@@ -90,7 +90,7 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Login text
+              
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');

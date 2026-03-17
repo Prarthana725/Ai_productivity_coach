@@ -7,33 +7,93 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.background,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: AppColors.darkText),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            const TextField(
-              decoration: InputDecoration(labelText: "Email"),
-            ),
-            const SizedBox(height: 20),
-            const TextField(
-              obscureText: true,
-              decoration: InputDecoration(labelText: "Password"),
-            ),
-            const SizedBox(height: 40),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                minimumSize: const Size(double.infinity, 50),
+      backgroundColor: AppColors.background,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              const SizedBox(height: 20),
+
+              // Back Button
+              IconButton(
+                icon: const Icon(Icons.arrow_back),
+                color: AppColors.darkText,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
-              onPressed: () {},
-              child: const Text("Login"),
-            ),
-          ],
+
+              const SizedBox(height: 40),
+
+              // Email Label
+              const Text(
+                "Email",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.darkText,
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              // Email TextField
+              const TextField(
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(),
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // Password Label
+              const Text(
+                "Password",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.darkText,
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              // Password TextField
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(),
+                ),
+              ),
+
+              const SizedBox(height: 50),
+
+              // Login Button
+              SizedBox(
+                width: double.infinity,
+                height: 55,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    elevation: 2,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

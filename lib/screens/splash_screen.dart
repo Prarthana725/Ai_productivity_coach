@@ -16,28 +16,30 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(const Duration(seconds: 3), () {
+
       if (mounted) {
         Navigator.pushReplacementNamed(context, '/welcome');
       }
+
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        alignment: Alignment.center,
+      backgroundColor: AppColors.background,
+
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Icon(
-              Icons.access_time,
-              size: 90,
-              color: AppColors.primary,
-            ),
+
+            Icon(Icons.access_time,
+                size: 90,
+                color: AppColors.primary),
+
             SizedBox(height: 20),
+
             Text(
               "AI Productivity Coach",
               style: TextStyle(
@@ -46,16 +48,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: AppColors.darkText,
               ),
             ),
+
             SizedBox(height: 20),
+
             CircularProgressIndicator(),
+
             SizedBox(height: 10),
-            Text(
-              "Initializing your day...",
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey,
-              ),
-            ),
+
+            Text("Initializing your day...")
+
           ],
         ),
       ),
